@@ -3,16 +3,11 @@
 # Docs: https://docs.gitlab.com/ce/pages/
 image: ruby:2.3
 
-# add bundle cache to 'vendor' for speeding up builds
-cache:
-  paths:
-   - vendor/
-
 variables:
   JEKYLL_ENV: production
 
 before_script:
-- bundle install --path vendor
+- bundle install
 
 test:
   stage: test
